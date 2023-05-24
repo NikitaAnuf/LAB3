@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <link rel = "stylesheet" href = "style.css" type = "text/css">
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+
+    <title>
+        Лабораторная работа 3
+    </title>
+
+    <body>
+
+        <div class = "container">
+
+            <div class = "row">
+
+                <ul class = "nav justify-content-center" style = "display: flex; width: 1000px; height: 100px; margin-left: auto; margin-right: auto; background-color: #dcdcdc; border: 1px solid;">
+
+                    <div class = "col-sm">
+
+                        <div class = "flex_logo">
+
+                            <div class = "text_logo" style = "text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 65px;">
+                                d
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                          
+                    <div class = "col-sm" style = "margin-top: auto; margin-bottom: auto;">
+
+                        <div class = "text_container">
+                            Название сайта
+                        </div>
+
+                    </div>
+
+                    <div class = "col-sm" style = "margin-top: auto; margin-bottom: auto;">
+
+                        <div class = "flex_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                            <div class = "text_button" id="toastbtn">
+                                Загрузить
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class = "flex_heading">
+
+            <h1>
+                Заголовок первого уровня
+            </h1>
+
+        </div> 
+
+        <div id = "root">
+
+            <script id = "template" type = "text/x-handlebars-template">
+                
+                <div class = "container" style = "width: 800px;">
+
+                    <div class = "row gy-5">
+                        
+                        {{#each cards}}
+                        <div class = "col-sm">
+
+                            <div class="card" style="width: 200px;">
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title">{{name}}</h5>
+                                    <p class="card-text">{{text}}</p>
+                                    <button type="button" class="btn btn-primary" id = "{{id}}" data-bs-toggle="modal" data-bs-target="#exampleModal" style = "background-color: #29b6f6;">Изменить</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        {{/each}}
+
+                    </div>
+
+                </div>
+
+            </script>
+
+        </div>
+        
+        <div class = "flex_footer">
+
+            <div class = "container" style = "width: 800px;">
+
+                <div class = "row" style = "height: 100px;">
+
+                    <div class = "col-md-auto col-sm" style = "margin-top: auto; margin-bottom: auto;">
+                        Ануфриев Никита
+                    </div>
+
+                    <div class = "col-md-auto col-sm" style = "margin-left: auto; margin-top: auto; margin-bottom: auto;">
+
+                        <img src = "../Картинки/facebook.png" style = "width: 50px; height: 50px;">
+                        <img src = "../Картинки/linkedin.png" style = "width: 50px; height: 50px;">
+                        <img src = "../Картинки/twitter.png" style = "width: 50px; height: 50px;">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+
+                <div class="modal-header">
+
+                  <h5 class="modal-title "></h5>
+
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p>Название карточки:</p>
+                    <input id = "create_name" type="text" />
+
+                    <p>Текст карточки:</p>
+                    <input id = "create_text" type="text" />
+
+                    <div class = "row" style = "margin: 20px;">
+
+                        <button type = "button" id = "save" style = "background-color: #29b6f6; width: 100px; height: 30px; margin-right: 10px;">Сохранить</button>
+
+                    </div>
+                    
+                    
+                </div>
+
+              </div>
+
+            </div>
+
+        </div>
+
+        <script type = "module" src = "script.js"></script>
+        <script src = "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src = "../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src = "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>
